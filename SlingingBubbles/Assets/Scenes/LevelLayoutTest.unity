@@ -259,6 +259,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3790071501196062995, guid: 9d60c6420544e374e99a44b38aa2b602, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7899352161245150328, guid: 9d60c6420544e374e99a44b38aa2b602, type: 3}
       propertyPath: m_Name
       value: End
@@ -373,6 +377,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 820366963259456383, guid: be52c8f306dd26340aab0bf4ef9070c8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2859854011034398670, guid: be52c8f306dd26340aab0bf4ef9070c8, type: 3}
       propertyPath: m_Name
       value: Start
@@ -390,6 +398,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 703510778217708097, guid: f0a1cca3d577d69478ab306b82f1d55f, type: 3}
+      propertyPath: m_Name
+      value: CanvasBG
+      objectReference: {fileID: 0}
     - target: {fileID: 2316656250646027746, guid: f0a1cca3d577d69478ab306b82f1d55f, type: 3}
       propertyPath: m_Camera
       value: 
@@ -438,6 +450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7664450007248439480, guid: f0a1cca3d577d69478ab306b82f1d55f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 556457434}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

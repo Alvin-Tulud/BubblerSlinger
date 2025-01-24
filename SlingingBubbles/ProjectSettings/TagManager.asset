@@ -53,5 +53,8 @@ TagManager:
   - name: player
     uniqueID: 401491169
     locked: 0
+  - name: leveltransition
+    uniqueID: 2882277399
+    locked: 0
   m_RenderingLayers:
   - Default
