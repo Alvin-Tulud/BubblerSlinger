@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class winState : MonoBehaviour
+public class winState : State
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override State ChangeState()
     {
-        
+        return this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override State RunCurrentState()
     {
-        
+        //when win state is triggered play the exit anim and switch to next level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        return this;
     }
 }

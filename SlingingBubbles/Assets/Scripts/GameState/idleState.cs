@@ -1,16 +1,23 @@
 using UnityEngine;
 
-public class idleState : MonoBehaviour
+public class idleState : State
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    dieState die;
+    winState win;
+
     void Start()
     {
-        
+        die = GetComponent<dieState>();
+        win = GetComponent<winState>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override State ChangeState()
     {
-        
+        return this;
+    }
+
+    public override State RunCurrentState()
+    {
+        return this;
     }
 }

@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class startState : MonoBehaviour
+public class startState : State
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    idleState idle;
+
     void Start()
     {
-        
+        idle = GetComponent<idleState>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override State ChangeState()
     {
-        
+        return this;
+    }
+
+    public override State RunCurrentState()
+    {
+        return this;
     }
 }
