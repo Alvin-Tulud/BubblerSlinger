@@ -4,6 +4,7 @@ public class idleState : State
 {
     dieState die;
     winState win;
+    //get player gameobject
 
     void Start()
     {
