@@ -10,6 +10,7 @@ public class BubbleMovement : MonoBehaviour
     private bool updatingFling;
 
     private bool isDead;
+    private bool decelerating;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +21,7 @@ public class BubbleMovement : MonoBehaviour
         flingVector = new Vector2();
 
         isDead = false;
+        decelerating = false;
     }
 
     // Update is called once per frame
@@ -30,6 +32,21 @@ public class BubbleMovement : MonoBehaviour
             Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 bubblePos = gameObject.transform.position;
             flingVector = point - bubblePos;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        //If the bubble hits a normal wall it will slow down till it stops
+        if(decelerating)
+        {
+            rb.linearVelocity = rb.linearVelocity * 0.9f;
+
+            if(rb.linearVelocity.magnitude < 0.05f)
+            {
+                Debug.Log("slowed far enough, now stopping");
+                decelerating = false;
+            }
         }
     }
 
@@ -93,8 +110,9 @@ public class BubbleMovement : MonoBehaviour
                 rb.linearVelocity = Vector2.zero;
                 isDead = true;
                 break;
-            case 7:
-                rb.linearVelocity = Vector2.zero;
+            case 7: //wall
+                //rb.linearVelocity = Vector2.zero;
+                decelerating = true;
                 break;
             case 11:
                 //do the bouncing stuff here idk

@@ -17,7 +17,7 @@ TagManager:
   - start
   - end
   - player
-  - 
+  - aimer
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 401491169
+    locked: 0
+  - name: aimer
+    uniqueID: 2252722583
     locked: 0
   - name: leveltransition
     uniqueID: 2882277399
