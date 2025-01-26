@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class idleState : State
@@ -25,6 +26,11 @@ public class idleState : State
         if (PlayerScript.getIsDead())
         {
             return die;
+        }
+
+        else if (PlayerScript.getIsWon())
+        {
+            return win;
         }
 
         return this;

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,7 +26,7 @@ public class winState : State
     IEnumerator playTransition()
     {
         transition.SetBool("isStart", false);
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(1.25f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
