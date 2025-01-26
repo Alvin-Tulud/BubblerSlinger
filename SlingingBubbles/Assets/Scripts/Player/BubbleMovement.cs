@@ -15,8 +15,8 @@ public class BubbleMovement : MonoBehaviour
 
     private GameObject aimer;
     private SpriteRenderer aimSprite;
-    private GameObject aimer2;
-    private SpriteRenderer aimSprite2;
+    //private GameObject aimer2;
+    //private SpriteRenderer aimSprite2;
 
     [SerializeField] private int maxFlingCount;
     [SerializeField] private int currentFlingCount;
@@ -37,8 +37,8 @@ public class BubbleMovement : MonoBehaviour
         aimSprite = aimer.GetComponent<SpriteRenderer>();
 
         //This one is for an indicator halfway between the two of them
-        aimer2 = gameObject.transform.Find("midAimer").gameObject;
-        aimSprite2 = aimer2.GetComponent<SpriteRenderer>();
+        //aimer2 = gameObject.transform.Find("midAimer").gameObject;
+        //aimSprite2 = aimer2.GetComponent<SpriteRenderer>();
 
         rb.linearDamping = 1.3f;
     }
@@ -69,18 +69,18 @@ public class BubbleMovement : MonoBehaviour
             {
                 flingVector = new Vector2();
                 aimSprite.enabled = false;
-                aimSprite2.enabled = false;
+                //aimSprite2.enabled = false;
             }
             else //restricts fling to max strength
             {
                 m = Mathf.Clamp(m, 1f, 7f);
                 flingVector = flingVector.normalized * m;
                 aimSprite.enabled = true;
-                aimSprite2.enabled = true;
+                //aimSprite2.enabled = true;
                 Vector3 v = gameObject.transform.position - (Vector3)flingVector;
                 aimer.transform.position = v;
                 v = gameObject.transform.position - (Vector3)(flingVector.magnitude/2 * flingVector.normalized);
-                aimer2.transform.position = v;
+                //aimer2.transform.position = v;
             }
         }
     }
@@ -104,8 +104,9 @@ public class BubbleMovement : MonoBehaviour
             if(rb.linearVelocity.magnitude == 0)
             {
                 Debug.Log("flings = 0, change this logic w/ your stuff");
-                currentFlingCount = 1;
+                //currentFlingCount = 1;
                 //^Just here for testing
+                isDead = true;
             }
 
         }
@@ -141,7 +142,7 @@ public class BubbleMovement : MonoBehaviour
         else if (context.canceled)
         {
             aimSprite.enabled = false;
-            aimSprite2.enabled = false;
+            //aimSprite2.enabled = false;
             updatingFling = false;
             //if flingOK: fling w/ the vector
             //if the fling isn't strong enough, don't fling - prevents accidental flings

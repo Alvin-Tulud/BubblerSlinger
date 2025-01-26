@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd9384b6a3609394ead2230d2e7e4b90
+guid: d0a8cebdeaef9244ba3a2675cd1f8643
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638734836077799469
+  platformSettingsDirtyTick: 638734836077789473
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,7 +122,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Standby Bubble
+  - name: Frame_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -134,7 +134,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 16
-    spriteID: 0eaf42f6fd2aa6a41a176e53e2e47989
+    spriteID: 5f59bbd61bdeb0e4abf8ef56afeb016a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,16 +143,79 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 16
+      height: 16
+    spriteID: 7fcf91512bed2b14bbda42ed975e75e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28}
+  - name: Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 4
+      width: 16
+      height: 15
+    spriteID: 4e60789a2d0679541be487e975a24145
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 4}
+  - name: Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 27
+      width: 8
+      height: 10
+    spriteID: 8c567f572cfc737449fdefa3019d4650
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 27}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1160647485
-    name: Standby Bubble
+    guid: -564564585
+    name: Backward Bubble Animation
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Standby Bubble
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -160,7 +223,34 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 16
-      spriteId: 0eaf42f6fd2aa6a41a176e53e2e47989
+      spriteId: 5f59bbd61bdeb0e4abf8ef56afeb016a
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 7fcf91512bed2b14bbda42ed975e75e1
+    - name: Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 15
+      spriteId: 4e60789a2d0679541be487e975a24145
+    - name: Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 0
+        width: 8
+        height: 10
+      spriteId: 8c567f572cfc737449fdefa3019d4650
     linkedCells: []
     parentIndex: -1
   platformSettings:
