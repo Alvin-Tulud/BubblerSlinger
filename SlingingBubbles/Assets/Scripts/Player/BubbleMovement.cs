@@ -157,6 +157,9 @@ public class BubbleMovement : MonoBehaviour
                 break;
             case 11:
                 //do the bouncing stuff here idk
+
+                //gonna just multiply its velocity when it hits a bounce pad, if this doesn't feel good I'll just make it give u a set velocity
+                rb.linearVelocity = rb.linearVelocity * 1.6f;
                 break;
             default:
                 break;
