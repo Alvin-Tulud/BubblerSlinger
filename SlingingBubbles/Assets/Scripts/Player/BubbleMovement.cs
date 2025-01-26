@@ -3,15 +3,23 @@ using UnityEngine.InputSystem;
 
 public class BubbleMovement : MonoBehaviour
 {
+    private Rigidbody2D rb;
+
     private bool flingOK;
     private Vector2 flingVector;
     private bool updatingFling;
 
+    private bool isDead;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         flingOK = false;
         flingVector = new Vector2();
+
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -31,6 +39,8 @@ public class BubbleMovement : MonoBehaviour
 
         if(context.started)
         {
+            rb.linearVelocity = Vector2.zero;
+
             Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (gameObject.GetComponent<Collider2D>().OverlapPoint(point))
             {
@@ -65,7 +75,7 @@ public class BubbleMovement : MonoBehaviour
                 Debug.Log("magnitude clamped to " + m);
 
 
-                gameObject.GetComponent<Rigidbody2D>().AddForce(flingVector.normalized * m * -1, ForceMode2D.Impulse);
+                rb.AddForce(flingVector.normalized * m * -1, ForceMode2D.Impulse);
                 flingVector = new Vector2();
                 flingOK = false;
 
@@ -73,4 +83,26 @@ public class BubbleMovement : MonoBehaviour
             //
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //layer 6 is spike, 7 is wall, 11 is bouncewall
+        switch (collision.gameObject.layer)
+        {
+            case 6:
+                rb.linearVelocity = Vector2.zero;
+                isDead = true;
+                break;
+            case 7:
+                rb.linearVelocity = Vector2.zero;
+                break;
+            case 11:
+                //do the bouncing stuff here idk
+                break;
+            default:
+                break;
+        }
+    }
+
+    public bool getIsDead() { return isDead; }
 }
