@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd9384b6a3609394ead2230d2e7e4b90
+guid: ae95ebe63f9571449a873ac9fee9fb3f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,10 +122,10 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Standby Bubble
+  - name: Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -134,7 +134,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 16
-    spriteID: 0eaf42f6fd2aa6a41a176e53e2e47989
+    spriteID: 487a7d8464d58484481e17d2af7ea527
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,16 +143,79 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 16
+      height: 16
+    spriteID: 3b7a7aa3cfbaa044e82db06698a49134
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28}
+  - name: Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 4
+      width: 16
+      height: 16
+    spriteID: 3ebfcc877a73176428ce866791c14bd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 4}
+  - name: Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 28
+      width: 16
+      height: 16
+    spriteID: 188898f14aa0ba345a892e93d5e78f09
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 28}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1160647485
-    name: Standby Bubble
+    guid: -1441718900
+    name: Sucking Air Bubble Animation
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Standby Bubble
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -160,7 +223,34 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 16
-      spriteId: 0eaf42f6fd2aa6a41a176e53e2e47989
+      spriteId: 487a7d8464d58484481e17d2af7ea527
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 3b7a7aa3cfbaa044e82db06698a49134
+    - name: Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 3ebfcc877a73176428ce866791c14bd7
+    - name: Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 188898f14aa0ba345a892e93d5e78f09
     linkedCells: []
     parentIndex: -1
   platformSettings:
