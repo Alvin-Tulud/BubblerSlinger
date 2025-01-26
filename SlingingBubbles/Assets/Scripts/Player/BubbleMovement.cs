@@ -36,6 +36,8 @@ public class BubbleMovement : MonoBehaviour
         //This one is for an indicator halfway between the two of them
         aimer2 = gameObject.transform.Find("midAimer").gameObject;
         aimSprite2 = aimer2.GetComponent<SpriteRenderer>();
+
+        rb.linearDamping = 1.3f;
     }
 
     // Update is called once per frame
@@ -128,7 +130,7 @@ public class BubbleMovement : MonoBehaviour
                 Debug.Log("magnitude clamped to " + m);
 
 
-                rb.AddForce(flingVector * -1, ForceMode2D.Impulse);
+                rb.AddForce(flingVector * -1.6f, ForceMode2D.Impulse);
                 flingVector = new Vector2();
             }
             flingOK = false;
