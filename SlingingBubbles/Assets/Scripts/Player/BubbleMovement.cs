@@ -43,6 +43,11 @@ public class BubbleMovement : MonoBehaviour
         rb.linearDamping = 1.3f;
     }
 
+    public int getFlingCount()
+    {
+        return currentFlingCount;
+    }
+
     public void setFling(int count)
     {
         //I assume the bubble counts down to 0 from max?
