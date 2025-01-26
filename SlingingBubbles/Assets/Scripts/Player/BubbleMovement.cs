@@ -12,6 +12,11 @@ public class BubbleMovement : MonoBehaviour
     private bool isDead;
     private bool decelerating;
 
+    private GameObject aimer;
+    private SpriteRenderer aimSprite;
+    private GameObject aimer2;
+    private SpriteRenderer aimSprite2;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +27,13 @@ public class BubbleMovement : MonoBehaviour
 
         isDead = false;
         decelerating = false;
+
+        aimer = gameObject.transform.Find("aimer").gameObject;
+        aimSprite = aimer.GetComponent<SpriteRenderer>();
+
+        //This one is for an indicator halfway between the two of them
+        aimer2 = gameObject.transform.Find("midAimer").gameObject;
+        aimSprite2 = aimer2.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,6 +44,25 @@ public class BubbleMovement : MonoBehaviour
             Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 bubblePos = gameObject.transform.position;
             flingVector = point - bubblePos;
+            float m = flingVector.magnitude;
+
+            if(m < 1) //no fling if not strong enough
+            {
+                flingVector = new Vector2();
+                aimSprite.enabled = false;
+                aimSprite2.enabled = false;
+            }
+            else //restricts fling to max strength
+            {
+                m = Mathf.Clamp(m, 1f, 7f);
+                flingVector = flingVector.normalized * m;
+                aimSprite.enabled = true;
+                aimSprite2.enabled = true;
+                Vector3 v = gameObject.transform.position - (Vector3)flingVector;
+                aimer.transform.position = v;
+                v = gameObject.transform.position - (Vector3)(flingVector.magnitude/2 * flingVector.normalized);
+                aimer2.transform.position = v;
+            }
         }
     }
 
@@ -73,11 +104,14 @@ public class BubbleMovement : MonoBehaviour
             if(flingOK)
             {
                 updatingFling = true;
+                aimSprite.enabled = true;
             }
         }
 
         else if (context.canceled)
         {
+            aimSprite.enabled = false;
+            aimSprite2.enabled = false;
             updatingFling = false;
             //if flingOK: fling w/ the vector
             //if the fling isn't strong enough, don't fling - prevents accidental flings
@@ -92,12 +126,11 @@ public class BubbleMovement : MonoBehaviour
                 Debug.Log("magnitude clamped to " + m);
 
 
-                rb.AddForce(flingVector.normalized * m * -1, ForceMode2D.Impulse);
+                rb.AddForce(flingVector * -1, ForceMode2D.Impulse);
                 flingVector = new Vector2();
-                flingOK = false;
-
             }
-            //
+            flingOK = false;
+
         }
     }
 
