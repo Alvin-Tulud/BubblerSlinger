@@ -13,6 +13,8 @@ public class startState : State
         idle = GetComponent<idleState>();
 
         playerScript = GameObject.Find("PlayerBubble").GetComponent<BubbleMovement>();
+
+        SetCount(flingCount);
     }
 
     public override State ChangeState()

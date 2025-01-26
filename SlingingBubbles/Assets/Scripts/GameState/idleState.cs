@@ -23,7 +23,7 @@ public class idleState : State
 
     public override State RunCurrentState()
     {
-        if (PlayerScript.getIsDead())
+        if (PlayerScript.getIsDead() || PlayerScript.getFlingCount() == 0)
         {
             return die;
         }

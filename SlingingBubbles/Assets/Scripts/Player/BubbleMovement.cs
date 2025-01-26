@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,9 +22,13 @@ public class BubbleMovement : MonoBehaviour
     [SerializeField] private int maxFlingCount;
     [SerializeField] private int currentFlingCount;
 
+    private TextMeshProUGUI flingcountdispplay;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        flingcountdispplay = transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
+
         rb = GetComponent<Rigidbody2D>();
 
         flingOK = false;
@@ -35,6 +40,7 @@ public class BubbleMovement : MonoBehaviour
 
         aimer = gameObject.transform.Find("aimer").gameObject;
         aimSprite = aimer.GetComponent<SpriteRenderer>();
+        aimSprite.enabled = false;
 
         //This one is for an indicator halfway between the two of them
         //aimer2 = gameObject.transform.Find("midAimer").gameObject;
@@ -58,7 +64,9 @@ public class BubbleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(updatingFling)
+        flingcountdispplay.text = "" + currentFlingCount;
+
+        if (updatingFling)
         {
             Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 bubblePos = gameObject.transform.position;
@@ -106,7 +114,6 @@ public class BubbleMovement : MonoBehaviour
                 Debug.Log("flings = 0, change this logic w/ your stuff");
                 //currentFlingCount = 1;
                 //^Just here for testing
-                isDead = true;
             }
 
         }
