@@ -10,6 +10,7 @@ public class BubbleMovement : MonoBehaviour
     private bool updatingFling;
 
     private bool isDead;
+    private bool isWon;
     private bool decelerating;
 
     private GameObject aimer;
@@ -26,6 +27,7 @@ public class BubbleMovement : MonoBehaviour
         flingVector = new Vector2();
 
         isDead = false;
+        isWon = false;
         decelerating = false;
 
         aimer = gameObject.transform.Find("aimer").gameObject;
@@ -147,6 +149,10 @@ public class BubbleMovement : MonoBehaviour
                 //rb.linearVelocity = Vector2.zero;
                 decelerating = true;
                 break;
+            case 9:
+                isWon = true;
+                decelerating = true;
+                break;
             case 11:
                 //do the bouncing stuff here idk
                 break;
@@ -156,4 +162,6 @@ public class BubbleMovement : MonoBehaviour
     }
 
     public bool getIsDead() { return isDead; }
+
+    public bool getIsWon() { return isWon; }
 }

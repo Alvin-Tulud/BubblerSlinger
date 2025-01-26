@@ -16,6 +16,7 @@ public class startState : State
 
     public override State RunCurrentState()
     {
-        return this;
+        return idle;
+        //return this;
     }
 }
