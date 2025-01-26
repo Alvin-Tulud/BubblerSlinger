@@ -36,9 +36,6 @@ public class BubbleMovement : MonoBehaviour
         //This one is for an indicator halfway between the two of them
         aimer2 = gameObject.transform.Find("midAimer").gameObject;
         aimSprite2 = aimer2.GetComponent<SpriteRenderer>();
-
-        aimSprite.enabled = false;
-        aimSprite2.enabled = false;
     }
 
     // Update is called once per frame
