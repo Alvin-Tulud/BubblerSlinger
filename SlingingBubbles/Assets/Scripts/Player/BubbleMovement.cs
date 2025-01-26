@@ -18,6 +18,9 @@ public class BubbleMovement : MonoBehaviour
     private GameObject aimer2;
     private SpriteRenderer aimSprite2;
 
+    [SerializeField] private int maxFlingCount;
+    [SerializeField] private int currentFlingCount;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,6 +41,13 @@ public class BubbleMovement : MonoBehaviour
         aimSprite2 = aimer2.GetComponent<SpriteRenderer>();
 
         rb.linearDamping = 1.3f;
+    }
+
+    public void setFling(int count)
+    {
+        //I assume the bubble counts down to 0 from max?
+        maxFlingCount = count;
+        currentFlingCount = count;
     }
 
     // Update is called once per frame
@@ -83,6 +93,17 @@ public class BubbleMovement : MonoBehaviour
                 decelerating = false;
             }
         }
+
+        if(currentFlingCount == 0)
+        {
+            if(rb.linearVelocity.magnitude == 0)
+            {
+                Debug.Log("flings = 0, change this logic w/ your stuff");
+                currentFlingCount = 1;
+                //^Just here for testing
+            }
+
+        }
     }
 
     public void testMouse(InputAction.CallbackContext context)
@@ -126,12 +147,19 @@ public class BubbleMovement : MonoBehaviour
 
                 Debug.Log("flinging w/ magnitude: " + m);
                 //Restricts max fling force to 7 - change if u want
+                //*technically reduntant but don't have time to change rn
                 m = Mathf.Clamp(m, 1f, 7f);
                 Debug.Log("magnitude clamped to " + m);
 
 
                 rb.AddForce(flingVector * -1.6f, ForceMode2D.Impulse);
                 flingVector = new Vector2();
+
+
+
+                //Andrew:
+                //I added this to decrease the bubble's fling count per successful fling, you can edit this if needed
+                currentFlingCount -= 1;
             }
             flingOK = false;
 
